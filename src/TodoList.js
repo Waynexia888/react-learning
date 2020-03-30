@@ -1,13 +1,17 @@
 import React, { Component, Fragment } from 'react';
-import './App.css'
+import './TodoList.css'
+import './TodoItem'
+import TodoItem from './TodoItem';
+
 
 class TodoList extends Component {
   constructor(props) {
     super(props);
     this.handleInputValue = this.handleInputValue.bind(this);
     this.handleKeyUp = this.handleKeyUp.bind(this);
+    this.handleClickValue = this.handleClickValue.bind(this);
     this.state = {
-      inputValue: "hello world",
+      inputValue: "",
       list: []
     }
   }
@@ -31,19 +35,23 @@ class TodoList extends Component {
   handleClickValue(index) {
     const list = [...this.state.list];
     list.splice(index, 1)
+    // 这里this的指向是undefied, 通过bind（this）方法，使其指向组件TodoList
     this.setState({
       list: list
     })
   }
 
   getItemList() {
+    // 父子组件的概念
+    // 父组件通过属性的形式向子组件传值
     return this.state.list.map((value, index) => {
       return (
-        <li key={index}
-          onClick={this.handleClickValue.bind(this, index)}
-          dangerouslySetInnerHTML={{__html: value}}
-        >
-        </li>
+        <TodoItem 
+          content={value} 
+          key={index}
+          index={index}
+          deleteFunction={this.handleClickValue}
+          />
       )
     })
 
