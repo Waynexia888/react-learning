@@ -6,6 +6,15 @@ import Child from './child';
 import LifeCycle from './lifecycle';
 import axios from 'axios';
 import { Button } from "antd";
+import { List, Typography } from "antd";
+
+const data = [
+  "Racing car sprays burning fuel into crowd.",
+  "Japanese princess to wed commoner.",
+  "Australian walks 100km after outback crash.",
+  "Man charged over missing wedding girl.",
+  "Los Angeles battles huge wildfires."
+];
 
 
 //在react中，生命周期函数指的是组件在某一时刻会自动执行的函数
@@ -112,7 +121,7 @@ class TodoList extends Component {
         <ul>{this.getItemList()}</ul>
 
         <Button
-          type="primary"  // 引用ant design 组件样式
+          type="primary" // 引用ant design 组件样式
           style={{
             marginLeft: 20,
             marginRight: 20,
@@ -136,6 +145,20 @@ class TodoList extends Component {
         <div>
           <LifeCycle />
         </div>
+
+        <List
+          style={{
+            marginLeft: 20,
+            marginRight: 20,
+            marginTop: 20
+          }}
+          size="large"
+          header={<div>Header</div>}
+          footer={<div>Footer</div>}
+          bordered
+          dataSource={data}
+          renderItem={item => <List.Item>{item}</List.Item>}
+        />
       </Fragment>
     );
   }
