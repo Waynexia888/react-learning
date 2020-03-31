@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Create React App
+* https://reactjs.org/docs/create-a-new-react-app.html
+* npx create-react-app my-app
+* cd my-app
+* npm start
 ## React Component Lifecycle
 * Mounting: （挂载）
   * constructor 
@@ -19,3 +24,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   * componentDidUpdate
 * Unmounting
   * componentWillUnmount （组件从页面中移除前自动执行）
+## React Router
+* npm install react-router-dom --save
