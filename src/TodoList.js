@@ -2,6 +2,9 @@ import React, { Component, Fragment } from 'react';
 import './TodoList.css'
 import './TodoItem'
 import TodoItem from './TodoItem';
+import Child from './child';
+
+//在react中，生命周期函数指的是组件在某一时刻会自动执行的函数
 
 
 class TodoList extends Component {
@@ -10,9 +13,11 @@ class TodoList extends Component {
     this.handleInputValue = this.handleInputValue.bind(this);
     this.handleKeyUp = this.handleKeyUp.bind(this);
     this.handleClickValue = this.handleClickValue.bind(this);
+    this.handleCount = this.handleCount.bind(this);
     this.state = {
       inputValue: "",
-      list: []
+      list: [],
+      counter: 1
     }
   }
 
@@ -57,8 +62,29 @@ class TodoList extends Component {
 
   }
 
+  handleCount() {
+    // console.log(this.buttonElem.clientTop)
+    // console.log(this.childElem)
+    const newCounter = this.state.counter + 1;
+    // setState是异步的
+    // this.setState({
+    //   counter: newCounter
+    // })
+    // 等价于：
+    this.setState(() => {
+      return {
+        counter: newCounter
+      };
+    }, () => {
 
+    })
+  }
+
+// render函数是一个react中的生命周期函数
   render() {
+    // 当组件初次创建的时候， render函数会被执行一次
+    // 当state数据发生变更的时候， render函数会被重新执行
+    // 当props数据发生变更的时候， render函数会被重新执行
     return (
       <Fragment>
         <label htmlFor="myinput">请输入内容：</label>
@@ -71,6 +97,18 @@ class TodoList extends Component {
         <ul>
           {this.getItemList()}
         </ul>
+
+        <button 
+          onClick={this.handleCount}
+          // ref 写在html标签上，获取的是dom节点
+          // ref={(button) => {this.buttonElem = button}}
+          >增加</button>
+        {/* <div>{this.state.counter}</div> */}
+        <Child 
+          number={this.state.counter}
+          // ref写在组件标签上，获取的是组件的js实例
+          ref={(child) => {this.childElem = child}}
+          />
 
       </Fragment>
     )
