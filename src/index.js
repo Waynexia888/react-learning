@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import List from "./TodoList";
 import "antd/dist/antd.css";
 
-import { BrowserRouter, Router, Link, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import NewButton from './newbutton';
 
 
@@ -13,7 +13,7 @@ class Entry extends Component {
     return (
       <BrowserRouter>
         <div>
-          <Route path="/list" component={List} />
+          <Route path="/list/:id" component={List} />
           <Route path="/button" component={NewButton} />
         </div>
       </BrowserRouter>

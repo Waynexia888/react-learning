@@ -102,9 +102,10 @@ class TodoList extends Component {
   //   window.addEventListener("click", this.handleClick)
   // }
   ////////////////////////////////////////////////
-
+  
   // render函数是一个react中的生命周期函数
   render() {
+    console.log(this.props.match.params.id);
     // 当组件初次创建的时候， render函数会被执行一次
     // 当state数据发生变更的时候， render函数会被重新执行
     // 当props数据发生变更的时候， render函数会被重新执行
@@ -177,12 +178,12 @@ class TodoList extends Component {
 //////////////////////////////////////////
 // $.ajax 请求获取数据的时候，需要引用axios这个工具，以及生命周期函数，
 // 来实现远程数据接口这个功能
-  componentDidMount() {
-    const promise = axios.get('http://www.dell-lee.com/react/api/demo.json')
-    promise.then((res) => {
-      console.log(res.data);
-    })
-  }
+  // componentDidMount() {
+  //   const promise = axios.get('http://www.dell-lee.com/react/api/demo.json')
+  //   promise.then((res) => {
+  //     console.log(res.data);
+  //   })
+  // }
 }
 
 
