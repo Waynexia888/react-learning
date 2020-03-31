@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './TodoList';
+import TodoList from "./TodoList";
+import "antd/dist/antd.css";
 
 
 ReactDOM.render(
+  <TodoList />,
 
-    <App />,
- 
-  document.getElementById('root')
+  document.getElementById("root")
 );
 

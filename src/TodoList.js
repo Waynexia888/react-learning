@@ -3,6 +3,10 @@ import './TodoList.css'
 import './TodoItem'
 import TodoItem from './TodoItem';
 import Child from './child';
+import LifeCycle from './lifecycle';
+import axios from 'axios';
+import { Button } from "antd";
+
 
 //在react中，生命周期函数指的是组件在某一时刻会自动执行的函数
 
@@ -18,32 +22,32 @@ class TodoList extends Component {
       inputValue: "",
       list: [],
       counter: 1
-    }
+    };
   }
 
   handleInputValue(e) {
     this.setState({
       inputValue: e.target.value
-    })
+    });
   }
 
   handleKeyUp(e) {
-    if (e.keyCode === 13 && e.target.value !== '') {
+    if (e.keyCode === 13 && e.target.value !== "") {
       const newList = [...this.state.list, this.state.inputValue];
       this.setState({
         list: newList,
-        inputValue: ''
-      })
+        inputValue: ""
+      });
     }
   }
 
   handleClickValue(index) {
     const list = [...this.state.list];
-    list.splice(index, 1)
+    list.splice(index, 1);
     // 这里this的指向是undefied, 通过bind（this）方法，使其指向组件TodoList
     this.setState({
       list: list
-    })
+    });
   }
 
   getItemList() {
@@ -51,15 +55,14 @@ class TodoList extends Component {
     // 父组件通过属性的形式向子组件传值
     return this.state.list.map((value, index) => {
       return (
-        <TodoItem 
-          content={value} 
+        <TodoItem
+          content={value}
           key={index}
           index={index}
           deleteFunction={this.handleClickValue}
-          />
-      )
-    })
-
+        />
+      );
+    });
   }
 
   handleCount() {
@@ -71,16 +74,27 @@ class TodoList extends Component {
     //   counter: newCounter
     // })
     // 等价于：
-    this.setState(() => {
-      return {
-        counter: newCounter
-      };
-    }, () => {
-
-    })
+    this.setState(
+      () => {
+        return {
+          counter: newCounter
+        };
+      },
+      () => {}
+    );
   }
 
-// render函数是一个react中的生命周期函数
+  ////////////////////////////////
+  // handleClick() {
+  //    console.log("window click");
+  // }
+
+  // componentWillMount() {
+  //   window.addEventListener("click", this.handleClick)
+  // }
+  ////////////////////////////////////////////////
+
+  // render函数是一个react中的生命周期函数
   render() {
     // 当组件初次创建的时候， render函数会被执行一次
     // 当state数据发生变更的时候， render函数会被重新执行
@@ -88,32 +102,66 @@ class TodoList extends Component {
     return (
       <Fragment>
         <label htmlFor="myinput">请输入内容：</label>
-        <input id="myinput"
+        <input
+          id="myinput"
           className="input"
           value={this.state.inputValue}
           onChange={this.handleInputValue}
           onKeyUp={this.handleKeyUp}
         />
-        <ul>
-          {this.getItemList()}
-        </ul>
+        <ul>{this.getItemList()}</ul>
 
-        <button 
+        <Button
+          type="primary"  // 引用ant design 组件样式
+          style={{
+            marginLeft: 20,
+            marginRight: 20,
+            marginTop: 20
+          }}
           onClick={this.handleCount}
           // ref 写在html标签上，获取的是dom节点
           // ref={(button) => {this.buttonElem = button}}
-          >增加</button>
+        >
+          增加
+        </Button>
         {/* <div>{this.state.counter}</div> */}
-        <Child 
+        <Child
           number={this.state.counter}
           // ref写在组件标签上，获取的是组件的js实例
-          ref={(child) => {this.childElem = child}}
-          />
+          ref={child => {
+            this.childElem = child;
+          }}
+        />
 
+        <div>
+          <LifeCycle />
+        </div>
       </Fragment>
-    )
+    );
+  }
+
+  // componentDidMount() {
+  //   window.addEventListener("click", () => {
+  //     console.log("window click");
+  //   });
+  // }
+////////////////////////////////////
+
+//   componentWillUnmount() {
+//     window.removeEventListener("click", this.handleClick)
+//   }
+
+//////////////////////////////////////////
+// $.ajax 请求获取数据的时候，需要引用axios这个工具，以及生命周期函数，
+// 来实现远程数据接口这个功能
+  componentDidMount() {
+    const promise = axios.get('http://www.dell-lee.com/react/api/demo.json')
+    promise.then((res) => {
+      console.log(res.data);
+    })
   }
 }
+
 
 
 export default TodoList;
