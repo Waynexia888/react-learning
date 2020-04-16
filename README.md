@@ -71,11 +71,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   * ![编码](/images/1.3.4.png)
 * 1.3.5 JSX练习： 需求: 动态展示列表数据
   * ![编码](/images/1.png)
-  * const arr = ['jquery', 'zeptoo', 'angular', 'react全家桶', 'vue全家桶']
-  * const ul = (
-  * <ul>
-  *     { arr.map((name, index) => <li key={index}>{name}</li> }
-  * <ul>)
+  * ![编码](/images/JSX.png)
 * 1.4 模块与组件和模块化与组件化的理解
 * 1.4.1 模块
   * 理解: 向外提供特定功能的js程序, 一般就是一个js文件
