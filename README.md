@@ -88,3 +88,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### 第2章：React面向组件编程
 * 2.1.1 自定义组件(Component) :
   * ![编码](/images/2.png)
+* 2.1.2 注意
+  * 组件名必须首字母大写
+  * 虚拟DOM元素只能有一个根元素
+  * 虚拟DOM元素必须有结束标签
+* 2.1.3 render()渲染组件标签的基本流程
+  * React内部会创建组件实例对象
+  * 得到包含的虚拟DOM并解析为真实DOM
+  * 插入到指定的页面元素内部
+* 2.2 组件三大属性1: state
+* 2.2.1 理解
+  * state是组件对象最重要的属性, 值是对象(可以包含多个数据)
+  * 组件被称为"状态机", 通过更新组件的state来更新对应的页面显示(重新渲染组件)
+* 2.2.2 编码操作
+  * ![编码](/images/3.png)
