@@ -59,7 +59,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   * 全称:  JavaScript XML
   * react定义的一种类似于XML的JS扩展语法: XML+JS
   * 作用: 用来创建react虚拟DOM(元素)对象
-  * 用法： var ele = <h1>Hello JSX!</h1>； 注意1: 它不是字符串, 也不是HTML/XML标签； 注意2: 它最终产生的就是一个JS对象
+  * 用法： ![编码](/images/1.3.2.png)注意1: 它不是字符串, 也不是HTML/XML标签； 注意2: 它最终产生的就是一个JS对象
   * 标签名任意: HTML标签或其它标签
   * 标签属性任意: HTML标签属性或其它
   * 基本语法规则： 遇到 <开头的代码, 以标签的语法解析: html同名标签转换为html同名元素, 其它标签需要特别解析； 遇到以 { 开头的代码，以JS语法解析: 标签中的js代码必须用{ }包含
