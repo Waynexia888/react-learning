@@ -73,5 +73,24 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   * JSX: <h1 id='myTitle'>{title}</h1>
 * 1.3.5 JSX练习： 需求: 动态展示列表数据
   * ![编码](/images/1.png)
-  * const arr = [jquery, zeptoo, angular, react全家桶, vue全家桶]
-  * { arr.map((name, index) => <li key={index}>{name}</li> }
+  * const arr = ['jquery', 'zeptoo', 'angular', 'react全家桶', 'vue全家桶']
+  * const ul = (
+  * <ul>
+  *     { arr.map((name, index) => <li key={index}>{name}</li> }
+  * <ul>)
+* 1.4 模块与组件和模块化与组件化的理解
+* 1.4.1 模块
+  * 理解: 向外提供特定功能的js程序, 一般就是一个js文件
+  * 为什么:  js代码更多更复杂
+  * 作用: 复用js, 简化js的编写, 提高js运行效率
+* 1.4.2 组件
+  * 理解: 用来实现特定(局部)功能效果的代码集合(html/css/js)
+  * 为什么: 一个界面的功能更复杂
+  * 作用: 复用编码, 简化项目编码, 提高运行效率
+* 1.4.3 模块化
+  * 当应用的js都以模块来编写的, 这个应用就是一个模块化的应用
+* 1.4.4 组件化
+  * 当应用是以多组件的方式实现, 这个应用就是一个组件化的应用
+### 第2章：React面向组件编程
+* 2.1.1 自定义组件(Component) :
+  * ![编码](/images/2.png)
