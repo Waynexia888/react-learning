@@ -68,8 +68,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   * 作用: 将虚拟DOM元素渲染到页面中的真实容器DOM中显示
   * 参数说明：参数一: 纯js或jsx创建的虚拟dom对象； 参数二: 用来包含虚拟DOM元素的真实dom元素对象(一般是一个div)
 * 1.3.4 建虚拟DOM的2种方式
-  * 纯JS(一般不用)： React.createElement('h1',  {id:'myTitle'},  title)
-  * JSX: <h1 id='myTitle'>{title}</h1>
+  * ![编码](/images/1.3.4.png)
 * 1.3.5 JSX练习： 需求: 动态展示列表数据
   * ![编码](/images/1.png)
   * const arr = ['jquery', 'zeptoo', 'angular', 'react全家桶', 'vue全家桶']
