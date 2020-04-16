@@ -77,4 +77,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   * const ul = (
   * <ul>
   *     { arr.map((name, index) => <li key={index}>{name}</li> }
-  * <ul>
+  * <ul>)
