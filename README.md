@@ -26,8 +26,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   * componentWillUnmount （组件从页面中移除前自动执行）
 ## React Router
 * npm install react-router-dom --save
-<<<<<<< HEAD
-=======
 ## 第1章：React入门（React的基本认识）
 * 1.1 官网
   * 英文官网: https://reactjs.org/
@@ -51,5 +49,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   * babel.min.js: 解析JSX语法代码转为纯JS语法代码的库
 * 1.2.1 编码
   * ![编码](/images/编码.png)
-
->>>>>>> 5eff37c2eb8fc6c88f22f980abbef577c2d3e8f7
+* 1.2.2 使用React开发者工具调试
+  * React Developer
+  
