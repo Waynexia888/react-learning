@@ -70,6 +70,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * 1.3.4 建虚拟DOM的2种方式
   * ![编码](/images/1.3.4.png)
 * 1.3.5 JSX练习： 需求: 动态展示列表数据
+  * ![编码](/images/1.png)
   * ![编码](/images/JSX.png)
 * 1.4 模块与组件和模块化与组件化的理解
 * 1.4.1 模块
