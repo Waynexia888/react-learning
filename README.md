@@ -73,5 +73,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   * JSX: <h1 id='myTitle'>{title}</h1>
 * 1.3.5 JSX练习： 需求: 动态展示列表数据
   * ![编码](/images/1.png)
-  * const arr = [jquery, zeptoo, angular, react全家桶, vue全家桶]
-  * { arr.map((name, index) => <li key={index}>{name}</li> }
+  * const arr = ['jquery', 'zeptoo', 'angular', 'react全家桶', 'vue全家桶']
+  * const ul = (
+  * <ul>
+  *     { arr.map((name, index) => <li key={index}>{name}</li> }
+  * <ul>
