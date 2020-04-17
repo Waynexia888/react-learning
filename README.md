@@ -111,3 +111,25 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   * 注意: 组件内部不要修改props数据
 * 2.3.3 编码操作
   * ![编码](/images/2.3.3.png)
+* 2.3.4 面试题: 问题: 请区别一下组件的props和state属性
+  * state: 组件自身内部可变化的数据
+  * props: 从组件外部向组件内部传递数据, 组件内部只读不修改
+* 2.4 组件三大属性3: refs与事件处理
+* 2.4.1 refs属性
+  * ![编码](/images/2.4.1.png)
+  * 在组件中可以通过this.msgInput来得到对应的真实DOM元素
+  * 作用: 通过ref获取组件内容特定标签对象, 进行读取其相关数据
+* 2.4.2 事件处理
+  * 通过onXxx属性指定组件的事件处理函数(注意大小写)
+  * React使用的是自定义(合成)事件, 而不是使用的原生DOM事件
+  * React中的事件是通过事件委托方式处理的(委托给组件最外层的元素)
+  * ![编码](/images/2.4.2.png)
+* 强烈注意
+  * 组件内置的方法中的this为组件对象
+  * 在组件类中自定义的方法中this为null
+  * 强制绑定this: 通过函数对象的bind()
+  * 箭头函数(ES6模块化编码时才能使用)
+
+
+
+
