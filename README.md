@@ -102,3 +102,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   * 组件被称为"状态机", 通过更新组件的state来更新对应的页面显示(重新渲染组件)
 * 2.2.2 编码操作
   * ![编码](/images/3.png)
+* 2.3 组件三大属性2: props
+* 2.3.1 理解
+  * 每个组件对象都会有props(properties的简写)属性
+  * 组件标签的所有属性都保存在props中
+* 2.3.2 作用
+  * 通过标签属性从组件外向组件内传递变化的数据
+  * 注意: 组件内部不要修改props数据
+* 2.3.3 编码操作
+  * ![编码](/images/2.3.3.png)
